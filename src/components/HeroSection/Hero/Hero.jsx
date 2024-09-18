@@ -4,12 +4,12 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/effect-fade';
 
 import './styles.css';
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation, EffectFade, } from 'swiper/modules';
 import HeroContent from './HeroContent';
 
 // hero background image;
@@ -39,29 +39,30 @@ const Hero = () => {
             <div>
                 <Swiper
                     spaceBetween={30}
+                    effect={'fade'}
                     centeredSlides={true}
                     autoplay={{
-                        delay: 4500,
+                        delay: 3500,
                         disableOnInteraction: false,
                     }}
                     pagination={{
                         clickable: true,
                     }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
+                    // navigation={true}
+                    modules={[Autoplay,  Navigation, EffectFade]}
                     onAutoplayTimeLeft={onAutoplayTimeLeft}
                     className="mySwiper"
                 >
-                    <SwiperSlide> <HeroContent heroImg={heroBg8}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg1}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg2}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg3}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg4}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg5}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg6}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg7}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg8}/> </SwiperSlide>
-                    <SwiperSlide> <HeroContent heroImg={heroBg9}/> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg8} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg1} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg2} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg3} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg4} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg5} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg6} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg7} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg8} /> </SwiperSlide>
+                    <SwiperSlide> <HeroContent heroImg={heroBg9} /> </SwiperSlide>
 
                     <div className="autoplay-progress" slot="container-end" >
                         <svg viewBox="0 0 48 48" ref={progressCircle}>
@@ -70,7 +71,7 @@ const Hero = () => {
                         <span className='text-[#EA062B]' ref={progressContent}></span>
                     </div>
                 </Swiper>
-            </div>
+            </div >
         </>
     );
 };
